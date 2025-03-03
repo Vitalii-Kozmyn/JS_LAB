@@ -173,6 +173,11 @@ function triangle(arg1, type1, arg2, type2) {
     return console.log("failed");
   }
 
+  if (alpha >= 90 || beta >= 90) {
+    console.log("Кут не може бути тупим (повинен бути < 90°). Введіть коректні дані.");
+    return console.log("failed");
+  }
+
   console.log("Результати: ");
   console.log("a = " + a);
   console.log("b = " + b);

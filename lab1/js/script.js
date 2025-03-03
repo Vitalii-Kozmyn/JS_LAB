@@ -42,134 +42,154 @@ function convertRadiansToDegrees(radians) {
   return radians * (180 / Math.PI);
 }
 
-function triangle(arg1, type1, arg2, type2) {
-  if (arg1 <= 0 || arg2 <= 0) {
-    console.log("Нуль або від'ємне число");
-    return console.log("failed");
-  }
+function convertDegreesToRadians(degrees) {
+  return degrees * (Math.PI / 180);
+}
 
+function triangle(arg1, type1, arg2, type2) {
   if (typeof arg1 !== "number" || typeof arg2 !== "number") {
     console.log("Введені аргументи повинні бути числами.");
     return console.log("failed");
   }
 
-  let a;
-  let b;
-  let c;
-  let alpha;
-  let beta;
-
-  if (type1 == "leg" && type2 == "leg") {
-    c = Math.sqrt(Math.pow(arg1, 2) + Math.pow(arg2, 2));
-    alpha = Math.atan(arg1 / arg2);
-    beta = Math.atan(arg2 / arg1);
-
-    console.log("Результати: ");
-    console.log("a = " + arg1);
-    console.log("b = " + arg2);
-    console.log("c = " + c);
-    console.log("alpha = " + convertRadiansToDegrees(alpha));
-    console.log("beta = " + convertRadiansToDegrees(beta));
-  } else if (
-    (type1 == "leg" && type2 == "hypotenuse") ||
-    (type1 == "hypotenuse" && type2 == "leg")
-  ) {
-    if (arg1 >= arg2) {
-      console.log("Катет не може бути більшим за гіпотенузу");
-      return console.log("failed");
-    }
-
-    b = Math.sqrt(Math.pow(arg2, 2) - Math.pow(arg1, 2));
-    alpha = Math.atan(arg1 / b);
-    beta = Math.atan(b / arg1);
-
-    console.log("Результати: ");
-    console.log("a = " + arg1);
-    console.log("b = " + b);
-    console.log("c = " + arg2);
-    console.log("alpha = " + convertRadiansToDegrees(alpha));
-    console.log("beta = " + convertRadiansToDegrees(beta));
-  } else if (
-    (type1 == "leg" && type2 == "adjacent angle") ||
-    (type1 == "adjacent angle" && type2 == "leg")
-  ) {
-    if (arg1 >= 90 || arg1 <= 0) {
-      console.log(
-        "Гострий кут повинен бути меншим за 90 градусів і більшим за 0."
-      );
-      return console.log("failed");
-    }
-
-    let alphaRad = arg1 * (Math.PI / 180);
-    c = arg2 / Math.cos(alphaRad);
-    a = arg2 * Math.tan(alphaRad);
-    beta = 90 - arg1;
-
-    console.log("Результати: ");
-    console.log("a = " + a);
-    console.log("b = " + arg2);
-    console.log("c = " + c);
-    console.log("alpha = " + arg1);
-    console.log("beta = " + beta);
-  } else if (
-    (type1 == "leg" && type2 == "opposite angle") ||
-    (type1 == "opposite angle" && type2 == "leg")
-  ) {
-    if (arg1 >= 90 || arg1 <= 0) {
-      console.log(
-        "Гострий кут повинен бути меншим за 90 градусів і більшим за 0."
-      );
-      return console.log("failed");
-    }
-
-    let betaRad = arg1 * (Math.PI / 180);
-    alpha = 90 - arg1;
-    c = arg2 / Math.sin(betaRad);
-    a = arg2 * Math.tan(betaRad);
-
-    console.log("Результати: ");
-    console.log("a = " + a);
-    console.log("b = " + arg2);
-    console.log("c = " + c);
-    console.log("alpha = " + alpha);
-    console.log("beta = " + arg1);
-  } else if (
-    (type1 == "hypotenuse" && type2 == "angle") ||
-    (type1 == "angle" && type2 == "hypotenuse")
-  ) {
-    if (arg1 >= 90 || arg1 <= 0) {
-      console.log(
-        "Гострий кут повинен бути меншим за 90 градусів і більшим за 0."
-      );
-      return console.log("failed");
-    }
-
-    let alphaRad = arg1 * (Math.PI / 180);
-    beta = 90 - arg1;
-
-    let a = arg2 * Math.sin(alphaRad);
-    let b = arg2 * Math.cos(alphaRad);
-
-    console.log("Результати: ");
-    console.log("a = " + a);
-    console.log("b = " + b);
-    console.log("c = " + arg2);
-    console.log("alpha = " + convertRadiansToDegrees(alphaRad));
-    console.log("beta = " + beta);
-  } else {
-    console.log("Щось пішло не так, перечитайте ще раз інструкцію.");
+  const EPSILON = 1e-10;
+  if (Math.abs(arg1) < EPSILON || Math.abs(arg2) < EPSILON) {
+    console.log("Значення занадто малі для точних обчислень.");
     return console.log("failed");
   }
+
+  const MAX_VALUE = 1e10;
+  if (Math.abs(arg1) > MAX_VALUE || Math.abs(arg2) > MAX_VALUE) {
+    console.log("Значення занадто великі для точних обчислень.");
+    return console.log("failed");
+  }
+
+  if ((type1 === "leg" || type1 === "hypotenuse") && arg1 <= 0) {
+    console.log("Сторони трикутника повинні бути додатними числами.");
+    return console.log("failed");
+  }
+  if ((type2 === "leg" || type2 === "hypotenuse") && arg2 <= 0) {
+    console.log("Сторони трикутника повинні бути додатними числами.");
+    return console.log("failed");
+  }
+
+  let a, b, c, alpha, beta;
+  let alphaRad, betaRad;
+
+  if (type1 === "leg" && type2 === "leg") {
+    a = arg1;
+    b = arg2;
+    c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+    alphaRad = Math.atan(a / b);
+    betaRad = Math.atan(b / a);
+    alpha = convertRadiansToDegrees(alphaRad);
+    beta = convertRadiansToDegrees(betaRad);
+  } else if (
+    (type1 === "leg" && type2 === "hypotenuse") ||
+    (type1 === "hypotenuse" && type2 === "leg")
+  ) {
+    let leg, hyp;
+
+    leg = arg2;
+    hyp = arg1;
+
+    if (leg >= hyp) {
+      console.log("Катет не може бути більшим або рівним гіпотенузі");
+      return console.log("failed");
+    }
+
+    a = leg;
+    c = hyp;
+    b = Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
+    alphaRad = Math.asin(a / c);
+    betaRad = Math.acos(a / c);
+    alpha = convertRadiansToDegrees(alphaRad);
+    beta = convertRadiansToDegrees(betaRad);
+  } else if (
+    (type1 === "leg" && type2 === "adjacent angle") ||
+    (type1 === "adjacent angle" && type2 === "leg")
+  ) {
+    let leg, angle;
+
+    leg = arg2;
+    angle = arg1;
+
+    if (angle <= 0 || angle >= 90) {
+      console.log("Прилеглий кут повинен бути більше 0 і менше 90 градусів.");
+      return console.log("failed");
+    }
+
+    alphaRad = convertDegreesToRadians(angle);
+    alpha = angle;
+    beta = 90 - angle;
+    b = leg;
+    a = b * Math.tan(alphaRad);
+    c = b / Math.cos(alphaRad);
+  } else if (
+    (type1 === "leg" && type2 === "opposite angle") ||
+    (type1 === "opposite angle" && type2 === "leg")
+  ) {
+    let leg, angle;
+
+    leg = arg2;
+    angle = arg1;
+
+    if (angle <= 0 || angle >= 90) {
+      console.log("Протилежний кут повинен бути більше 0 і менше 90 градусів.");
+      return console.log("failed");
+    }
+
+    alphaRad = convertDegreesToRadians(angle);
+    alpha = angle;
+    beta = 90 - angle;
+    b = leg;
+    a = b / Math.tan(alphaRad);
+    c = b / Math.sin(alphaRad);
+  } else if (
+    (type1 === "hypotenuse" && type2 === "angle") ||
+    (type1 === "angle" && type2 === "hypotenuse")
+  ) {
+    let hyp, angle;
+
+    hyp = arg2;
+    angle = arg1;
+
+    if (angle <= 0 || angle >= 90) {
+      console.log("Кут повинен бути більше 0 і менше 90 градусів.");
+      return console.log("failed");
+    }
+
+    c = hyp;
+    alphaRad = convertDegreesToRadians(angle);
+    alpha = angle;
+    beta = 90 - angle;
+    a = c * Math.sin(alphaRad);
+    b = c * Math.cos(alphaRad);
+  } else {
+    console.log("Непідтримувана комбінація типів: " + type1 + " і " + type2);
+    console.log(
+      "Перечитайте інструкцію і перевірте правильність введення даних."
+    );
+    return console.log("failed");
+  }
+
+  console.log("Результати: ");
+  console.log("a = " + a);
+  console.log("b = " + b);
+  console.log("c = " + c);
+  console.log("alpha = " + alpha);
+  console.log("beta = " + beta);
+
   return console.log("success");
 }
 
-// triangle(3, "leg", 4, "leg"); // Всі сторони та кути повинні бути розраховані правильно
-// triangle(4, "hypotenuse", 8, "leg"); // Розрахунок другого катета та кутів
-// triangle(5, "leg", 30, "adjacent angle"); // Обчислення через кут та катет
-// triangle(60, "leg", 5, "opposite angle"); // Перевірка випадку з протилежним кутом
-// triangle(10, "angle", 15, "hypotenuse"); // Розрахунок катетів від гіпотенузи та кута
-// triangle(100, "angle", 5, "hypotenuse"); // Неправильний випадок: гострий кут > 90°
-// triangle(5, "leg", -10, "leg"); // Некоректний ввід: від'ємне число
-// triangle("five", "leg", 10, "leg"); // Некоректний ввід: не число
-// triangle(3, "leg", 3, "leg"); // Випадок рівнобедреного прямокутного трикутника
-// triangle(10, "hypotenus", 4, "leg"); // Помилка в написанні "hypotenuse"
+// Приклади виклику функції
+// triangle(3, "leg", 4, "leg");
+// triangle(7, "leg", 18, "hypotenuse");
+// triangle(5, "hypotenuse", 3, "leg");
+// triangle(5, "leg", 30, "adjacent angle");
+// triangle(30, "adjacent angle", 5, "leg");
+// triangle(60, "leg", 5, "opposite angle");
+// triangle(60, "opposite angle", 5, "leg");
+// triangle(15, "hypotenuse", 30, "angle");
+// triangle(43.13, "angle", -2, "hypotenuse");

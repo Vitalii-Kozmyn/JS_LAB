@@ -268,3 +268,4 @@ function triangle(arg1, type1, arg2, type2) {
 // console.log("\nТест 10: Нульове або від'ємне значення");
 // triangle(-5, "leg", 10, "leg"); // Помилка
 // triangle(0, "leg", 10, "leg"); // Помилка
+

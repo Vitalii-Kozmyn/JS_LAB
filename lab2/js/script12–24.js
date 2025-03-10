@@ -40,11 +40,11 @@ class Rectangle extends Square {
 
     //1.2.22:
     get getA() {
-        return `${a}`
+        return `${this.a}`
     }
 
     get getB() {
-        return `${b}`
+        return `${this.b}`
     }
 
     set setA(a) {
@@ -118,7 +118,7 @@ class Rhombus extends Square {
 //1.2.20 -> 1.2.21:
 class Parallelogram extends Rhombus {
     constructor(a, b, alpha, beta) {
-        super(a, alpha, beta, b); 
+        super(a, alpha, beta); 
         this.b = b;
     }
 

@@ -82,14 +82,15 @@ Truck.prototype.trip = function () {
 //...........................................................
 
 //1.2.10......................................................
-// let carTruck1 = new Truck("Red", 5000, 80, "Ford", "Fiesta");
-// carTruck1.trip()//No driver assigned
+let carTruck1 = new Truck("Red", 5000, 80, "Ford", "Fiesta");
+carTruck1.trip()//No driver assigned
 
-// let carTruck2 = new Truck("Green", 4500, 85, "Ford", "Edge");
-// carTruck2.AssignDriver("Vitalii Kozmyn", true, 5);
-// carTruck2.trip(); //drives at night
+let carTruck2 = new Truck("Green", 4500, 85, "Ford", "Edge");
+carTruck2.AssignDriver("Vitalii Kozmyn", true, 5);
+carTruck2.trip(); //drives at night
 
-// let carTruck3 = new Truck("Green", 6500, 60, "Ford", "F-150 Lightning");
-// carTruck3.AssignDriver("Vitalii Kozmyn", false, 5);
-// carTruck3.trip(); //does not drive at night
+let carTruck3 = new Truck("Green", 6500, 60, "Ford", "F-150 Lightning");
+carTruck3.AssignDriver("Vitalii Kozmyn", false, 5);
+carTruck3.trip(); //does not drive at night
+console.log();
 //...........................................................

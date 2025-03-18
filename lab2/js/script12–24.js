@@ -144,27 +144,29 @@ class Parallelogram extends Rhombus {
 }
 //................................................................
 //1.2.23:
-// Square.help();
-// console.log(" ");
-// Rectangle.help();
-// console.log(" ");
-// Rhombus.help();
-// console.log(" ");
-// Parallelogram.help();
+Square.help();
+console.log(" ");
+Rectangle.help();
+console.log(" ");
+Rhombus.help();
+console.log(" ");
+Parallelogram.help();
 //................................................................
 
 //1.2.24:
-// let square = new Square(5);
-// let rectangle = new Rectangle(5, 4);
-// let rhombus = new Rhombus(5, 150, 60);
-// let parallelogram = new Parallelogram(5, 6, 130, 60);
+let square = new Square(5);
+let rectangle = new Rectangle(5, 4);
+let rhombus = new Rhombus(5, 150, 60);
+let parallelogram = new Parallelogram(5, 6, 130, 60);
 
-// console.log("............................")
-// square.info();
-// console.log(" ");
-// rectangle.info();
-// console.log(" ");
-// rhombus.info();
-// console.log(" ");
-// parallelogram.info();
+console.log("............................")
+square.info();
+console.log(" ");
+rectangle.info();
+console.log(" ");
+rhombus.info();
+console.log(" ");
+parallelogram.info();
+
+console.log(" ");
 //................................................................

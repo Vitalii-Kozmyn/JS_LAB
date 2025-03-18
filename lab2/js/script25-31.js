@@ -11,9 +11,10 @@ function Triangular(a, b, c) {
     return { a: A, b: B, c: C };
 }
 
-// console.log(Triangular());
-// console.log(Triangular(12, 4, 10));
-// console.log(Triangular(102, 1, 0));
+console.log(Triangular());
+console.log(Triangular(12, 4, 10));
+console.log(Triangular(102, 1, 0));
+console.log(" ");
 //.................................................
 
 //1.2.27 - 28:
@@ -23,14 +24,15 @@ function PiMultiplier(n){
     };
 }
 
-// const res1 = PiMultiplier(2);
-// console.log(res1());
+const res1 = PiMultiplier(2);
+console.log(res1());
 
-// const res2 = PiMultiplier(2/3);
-// console.log(res2());
+const res2 = PiMultiplier(2/3);
+console.log(res2());
 
-// const res3 = PiMultiplier(1/2);
-// console.log(res3());
+const res3 = PiMultiplier(1/2);
+console.log(res3());
+console.log(" ");
 //.................................................
 
 //1.2.29:
@@ -66,8 +68,10 @@ let obj3 = {
     isCarr: true,
 };
 
-// console.log(PaintBlue(obj1.type));
-// console.log(PaintRed(obj2.type));
-// console.log(PaintYellow(obj3.type));
+console.log(PaintBlue(obj1.type));
+console.log(PaintRed(obj2.type));
+console.log(PaintYellow(obj3.type));
+
+console.log(" ");
 //.................................................
 

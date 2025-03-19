@@ -10,3 +10,15 @@ for (let name in names) {
     SpeakHello(names[name]);
   }
 }
+
+//Мій підхід:
+console.log("")
+console.log("Наступний підхід полягає в тому, що якщо довжина імені більша за 4, то викликається SpeakGoodBye:");
+
+for(let i in names) {
+  if(names[i].length > 4) {
+    SpeakGoodBye(names[i]);
+  } else {
+    SpeakHello(names[i]);
+  }
+}

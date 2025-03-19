@@ -1,6 +1,7 @@
 import { speak as SpeakGoodBye } from "./SpeakGoodBye.js";
 import { speak as SpeakHello } from "./SpeakHello.js";
 
+(function() {
 var names = ["Bill", "John", "Jen", "Jason", "Paul", "Frank", "Steven", "Larry", "Paula", "Laura", "Jim"];
 
 for (let name in names) {
@@ -22,3 +23,4 @@ for(let i in names) {
     SpeakHello(names[i]);
   }
 }
+})();

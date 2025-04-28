@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pixel Hunt</title>
+</head>
+<body>
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="title-game">
+                    <a href="" class="title">
+                        <button class="btn btn-title">Pixel Hunt</button>
+                    </a>
+                </div>
+                <div class="game-options">
+                    <div class="game-options__mode">
+                        <label for="mode">Виберіть складність:</label>
+                        <select name="mode" id="mode-menu">
+                            <option value="option1">Складність не обрана</option>
+                            <option value="option2">Легко</option>
+                            <option value="option3">Нормально</option>
+                            <option value="option4">Я можу робити це хоч цілий день.</option>
+                        </select>
+                    </div>
+                    <div class="game-options__customization">
+                        <label for="customization">Виберіть колір:</label>
+                        <select name="customization" id="customization-menu">
+                            <option value="option1">Колір не обрано</option>
+                            <option value="option2">Багровий</option>
+                            <option value="option3">Смарагдовий</option>
+                            <option value="option4">Бурштиновий</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-start">Почати</button>
+                </div>
+            </div>
+        </section>
+        <section class="game-section">
+            <div class="game-container">
+                <div class="pole game-info">
+                    <p>Очки: <span id="score-txt">0</span></p>
+                    <p>Час, що дяється для кліку: <span id="time-txt">0</span></p>
+                </div>
+                <div class="pole game-pole">
+                    <div class="cube"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script_start.js"></script>
+    <script src="./js/script_process.js"></script>
+</body>
+</html>

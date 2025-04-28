@@ -1,0 +1,177 @@
+/*Шрифт:.......................................................*/
+.arvo-regular {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.arvo-bold {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.arvo-regular-italic {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.arvo-bold-italic {
+    font-family: "Arvo", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+/*............................................................*/
+
+/*Основні:................................................... */
+:root {
+    --glow-color: rgb(190, 170, 80); /* тьмяний, бруднуватий */
+    --glow-spread-color: rgba(160, 140, 60, 0.8); /* затемнений, пригнічений */
+    --enhanced-glow-color: rgb(210, 190, 100); /* вигорілий, неживий */
+    --btn-color: rgb(140, 120, 40); /* глухий, майже болотяний */
+}
+
+body {
+    background-color: #121212;
+    font-family: "Arvo", serif;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    padding: 38px 86px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section {
+    display: block;
+}
+/*...........................................................*/
+
+/*Кнопки:................................................... */
+.btn-title, .btn {
+    width: 320px;
+    height: 80px;
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 28px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--btn-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-title::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+/*...........................................................*/
+
+/*Меню:..................................................... */
+.game-options, .pole{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(32px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 60px;
+    width: 1020px;
+    height: 60px;
+    font-size: 20px;
+}
+
+#mode-menu, #customization-menu {
+    font-size: 16px;
+}
+
+.btn-start {
+    width: 120px;
+    height: 32px;
+    font-size: 20px;
+}
+
+.btn-start:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.btn-start:active {
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 0.5em 0.25em var(--glow-color);
+}
+/*...........................................................*/
+
+
+/*Ігрова панель:..............................................*/
+.game-section {
+    display: none;
+}
+.game-info {
+    width: 500px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.game-pole {
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 840px; /*840*/ /*Нормально - 1000*/ /*Важко - 1300*/
+    height: 500px;
+}
+/*...........................................................*/
+
+/*Куб:.......................................................*/
+:root {
+    --bagryanyi: rgb(139, 0, 30);   
+    --smaragdovyi: rgb(0, 100, 70);
+    --burshtynovyi: rgb(204, 120, 50);
+}
+
+.cube {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    background-color: var(--burshtynovyi);
+}
+/*...........................................................*/

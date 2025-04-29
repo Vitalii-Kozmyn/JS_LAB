@@ -53,6 +53,6 @@ function StartGame() {
     } 
 }
 
-btnStart.addEventListener("click", (event) => { 
+btnStart.addEventListener("click", () => { 
     StartGame(); 
 });

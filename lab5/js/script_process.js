@@ -95,7 +95,7 @@ function StartTimer() {
     }
 }
 
-buttonStart.addEventListener("click", (event) => {
+buttonStart.addEventListener("click", () => {
     getMode();
 
     if(mode === "option2") {
@@ -110,7 +110,7 @@ buttonStart.addEventListener("click", (event) => {
 })
 
 
-cubeClicker.addEventListener("click", (event) => {
+cubeClicker.addEventListener("click", () => {
     if(!gameOver) {
         CubePosition();
         Score();

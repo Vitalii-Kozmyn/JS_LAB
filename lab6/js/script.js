@@ -51,7 +51,7 @@ function setDarkGrayTheme() {
 }
 
 function setSunTheme() {
-    root.style.setProperty('--glow-color', 'rgb(190, 170, 80);');
+    root.style.setProperty('--glow-color', 'rgb(190, 170, 80');
     root.style.setProperty('--glow-spread-color', 'rgba(160, 140, 60, 0.8)');
     root.style.setProperty('--enhanced-glow-color', 'rgb(210, 190, 100)');
     root.style.setProperty('--btn-color', 'rgb(140, 120, 40)');
@@ -77,15 +77,12 @@ let steps = 0;
 function renderGrid(map) {
     cubeGridContainer.innerHTML = '';
     for (let i = 0; i < map.length; i++) {
+        cubeDivs[i] = [];
         for (let j = 0; j < map[i].length; j++) {
             const newCubeDiv = document.createElement('div');
             newCubeDiv.classList.add('cube');
             if(map[i][j] == 1) {
                 newCubeDiv.classList.add('light');
-            }
-
-            if (!cubeDivs[i]) {
-            cubeDivs[i] = [];
             }
 
             cubeDivs[i][j] = newCubeDiv;
@@ -114,6 +111,7 @@ function renderGrid(map) {
 
                 steps++;
                 AddSteps(steps);
+                CheckWin();
             })
         }
     }
@@ -123,6 +121,7 @@ function RoundOver() {
     cubeGridContainer.innerHTML = '';
     minCountSteps.textContent = '0';
     countStepsTXT.textContent = '0';
+    timerTxt.textContent = '00:00'
 }
 
 function ShowAlert() {
@@ -220,6 +219,7 @@ function CheckWin() {
 
     if (countCorrect === totalCubes) {
         alert("Ви виграли!");
+        clearInterval(activeTimer);
         RoundOver();
         setDarkGrayTheme();
     }

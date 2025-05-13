@@ -91,11 +91,13 @@ function renderGrid(map) {
             newCubeDiv.dataset.j = j;
 
             cubeGridContainer.appendChild(newCubeDiv);
+
             newCubeDiv.addEventListener("click", ()=> {
                 const x = parseInt(newCubeDiv.dataset.i);
                 const y = parseInt(newCubeDiv.dataset.j);
 
                 ChangeLight(cubeDivs[i][j]);
+
                 if (cubeDivs[x - 1] && cubeDivs[x - 1][y]) {
                     ChangeLight(cubeDivs[x - 1][y]); //Верхній сусід
                 }

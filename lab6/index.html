@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lights Out</title>
+</head>
+<body>
+    <header>
+        <a href="#">
+            <button class="btn btn-title">
+                Lights Out
+            </button>
+        </a>
+    </header>
+    <main>
+        <div class="menu">
+            <div class="info-container">
+                <div class="info__element info__min-turn">
+                    <p>Мінімум ходів: <span id="min-count">0</span></p>
+                </div>
+                <div class="info__element info__count-turn">
+                    <p>К-сть ходів: <span id="count-steps">0</span></p>
+                </div>
+                <div class="info__element"><p class="info__timer">00:00</p></div>
+            </div>
+            <div class="menu__buttons">
+                <button class="menu_btn" id="start-btn">Почати гру</button>
+                <button class="menu_btn" id="restart-btn">Перезапуск</button>
+            </div>
+        </div>
+        <section class="game-section">
+            <div class="game-container">
+                <div id="cubeMap" class="cube-grid">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>

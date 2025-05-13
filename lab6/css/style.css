@@ -1,0 +1,169 @@
+:root {
+    --glow-color: rgb(190, 170, 80); /* тьмяний, бруднуватий */
+    --glow-spread-color: rgba(160, 140, 60, 0.8); /* затемнений, пригнічений */
+    --enhanced-glow-color: rgb(210, 190, 100); /* вигорілий, неживий */
+    --btn-color: rgb(140, 120, 40); /* глухий, майже болотяний */
+    --restart-btn-color: rgb(120, 50, 30);
+}
+
+body {
+    background-color: #121212;
+    color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+.btn-title, .btn {
+    width: 370px;
+    height: 80px;
+    border: 0.25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 28px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--btn-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-title::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.info-container {
+    background-color: rgba(140, 120, 40, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 78px;
+    margin-top: 36px;
+    gap: 40px;
+    font-size: 22px;
+}
+
+.info__element {
+    display: flex;
+    width: 180px;
+    height: 62px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--glow-spread-color);
+    border-radius: 20px;
+}
+
+.menu__buttons {
+    background-color: rgba(140, 120, 40, 0.2);;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 78px;
+    margin-top: 36px;
+    gap: 20px;
+}
+
+.menu_btn {
+    font-size: 22px;
+    width: 140px;
+    height: 62px;
+    background-color: var(--glow-spread-color);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+#restart-btn {
+    background-color: var(--restart-btn-color);
+}
+
+.game-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    margin-top: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(11, 10, 10, 0.18);
+    backdrop-filter: blur(32px);
+    border: 1px solid rgba(20, 19, 19, 0.2);
+    border-radius: 14px;
+    width: 546px;
+    height: 460px;
+}
+
+.cube-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 90px);
+    grid-auto-rows: 82px;
+    padding: 0;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cube {
+    width: 90px;
+    height: 82px;
+    background-color: rgb(6, 7, 7);
+    
+    text-align: center;
+    line-height: 52px;
+    font-weight: bold;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light {
+    background-color: azure;
+        box-shadow: 0 0 1em 0.25em var(--btn-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 0.75em 0.25em var(--glow-color);
+}
+

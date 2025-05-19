@@ -1,0 +1,89 @@
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.movie-card .card__poster {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.movie-card .bg--card__details{
+    position: absolute;
+    bottom: -130px;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(0deg, rgb(161, 6, 6) 50%, transparent); */
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.movie-card:hover .bg--card__details {
+    bottom: 0px;
+}
+
+.movie-card .card__poster img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.movie-card:hover .card__poster img {
+    transform: translateY(-50px);
+    filter: blur(3.5px);
+}
+
+.movie-card .card__details {
+    position: absolute;
+    width: 100%;
+    bottom: 6px;
+    left: 0;
+    padding: 16px;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.movie-card:hover .card__details {
+    bottom: 0px;
+}
+
+.movie-card .card__details  .card__details-logo {
+    max-width: 180px;
+    max-height: 65px;
+    /*min-height: 45px; */
+    /* padding-bottom: 16px; */
+}
+
+.movie-card .card__details .card__details-company {
+    font-size: 14px;
+    color: aliceblue;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card__details-imdb {
+    height: 34px;
+    gap: 2px;
+}
+.imdb {
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.card__details-ganre {
+    margin-top: 3px;
+    margin-bottom: 0;
+    padding: 6px 8px;
+    background-color: red;
+}
+
+.card__details-description p {
+    margin-top: 10px;
+    max-width: 280px;
+    font-size: 16px;
+}

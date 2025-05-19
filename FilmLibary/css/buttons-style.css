@@ -1,34 +1,46 @@
 :root {
-    --color-btn: red;
+    --color-btn: #8B0000;
     --color-text: aliceblue;
 }
 
-.nav__button--login{
+.btn {
+    padding: 12px 28px;
+    font-size: 22px;
+    color: var(--color-text);
+    background-color: var(--color-btn);
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.nav__button--login, .nav__button--logout {
     position: relative;
     display: inline-block;
     padding: 12px 28px;
     font-size: 22px;
-    color:  var(--color-btn);
+    color: red;
     text-decoration: none;
     transition: 0.5s;
     overflow: hidden;
 }
-.nav__button--login:hover {
-    background:  var(--color-btn);
+.nav__button--login:hover,
+.btn:hover, .nav__button--logout:hover {
+    background: var(--color-btn);
     color: #050801;
-    box-shadow: 0 0 5px  var(--color-btn), 0 0 25px  var(--color-btn), 0 0 50px  var(--color-btn), 0 0 200px  var(--color-btn);
+    box-shadow: 0 0 5px var(--color-btn), 0 0 10px var(--color-btn), 0 0 20px var(--color-btn),
+        0 0 200px var(--color-btn);
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
-.nav__button--login span {
+.nav__button--login span, .nav__button--logout span{
     position: absolute;
     display: block;
 }
-.nav__button--login span:nth-child(1) {
+.nav__button--login span:nth-child(1), .nav__button--logout span:nth-child(1) {
     top: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent,  var(--color-btn));
+    background: linear-gradient(90deg, transparent, var(--color-btn));
     animation: animate1 1s linear infinite;
 }
 @keyframes animate1 {
@@ -40,12 +52,12 @@
         left: 100%;
     }
 }
-.nav__button--login span:nth-child(2) {
+.nav__button--login span:nth-child(2), .nav__button--logout span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent,  var(--color-btn));
+    background: linear-gradient(180deg, transparent, var(--color-btn));
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
@@ -58,12 +70,12 @@
         top: 100%;
     }
 }
-.nav__button--login span:nth-child(3) {
+.nav__button--login span:nth-child(3), .nav__button--logout span:nth-child(3) {
     bottom: 0;
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent,  var(--color-btn));
+    background: linear-gradient(270deg, transparent, var(--color-btn));
     animation: animate3 1s linear infinite;
     animation-delay: 0.5s;
 }
@@ -77,12 +89,12 @@
     }
 }
 
-.nav__button--login span:nth-child(4) {
+.nav__button--login span:nth-child(4), .nav__button--logout span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent,  var(--color-btn));
+    background: linear-gradient(360deg, transparent, var(--color-btn));
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
@@ -93,5 +105,72 @@
     50%,
     100% {
         bottom: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .btn,
+    .nav__button--login, .nav__button--logout {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn,
+    .nav__button--login, .nav__button--logout{
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+}
+
+.close-btn {
+    top: 20px;
+    right: 20px;
+    font-size: 50px;
+    background: none;
+    border: none;
+    color: var(--color-btn);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.filter-btn {
+    padding: 12px 20px;
+    font-size: 22px;
+    width: 160px;
+    color: var(--color-text);
+    background-color: transparent;
+    border: white 1px solid;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.active {
+    background-color: var(--color-btn);
+    border: var(--color-btn) 1px solid;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+    .filter-btn {
+        width: 110px;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 769px) {
+    .filter-btn {
+        width: 90px;
+        padding: 6px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .filter-btn {
+        width: 80px;
+        padding: 4px;
+        font-size: 14px;
     }
 }

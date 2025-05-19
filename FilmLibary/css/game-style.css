@@ -1,0 +1,111 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+body {
+    background-image: url("../images/bg_gamemovie.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.game-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.game__container {
+    max-width: 893px;
+    width: 100%;
+    height: 480px;
+    margin: -10px 175px;
+    position: relative;
+}
+
+.game__pole {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(25, 25, 25, 0.1), rgba(255,255,255, 0));
+    backdrop-filter: blur(7px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(0, 0, 0);
+    z-index: 100;
+}
+
+
+.game__danger-line {
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(90deg, rgba(165, 4, 4, 0.7), rgba(165, 4, 4, 0.5));
+    backdrop-filter: blur(20px);
+    position: absolute;
+    bottom: 0;
+}
+
+.game__basket {
+    width: 90px;
+    height: 80px;
+    background-image: url("../images/popcorn_resized.png");
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 25px);
+}
+
+.popcorn {
+    position: absolute;
+    background-image: url("../images/popcorn.png");
+    width: 30px;
+    height: 30px;
+}
+
+.game__bg-video {
+    filter: brightness(0.5) saturate(1.2);
+    box-shadow: 0 0 60px 30px rgba(255, 255, 255, 0.2);
+}
+
+.game__ui {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    background: linear-gradient(90deg, rgba(25, 25, 25, 0.1), rgba(255,255,255, 0));
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(0, 0, 0);
+    width: fit-content;
+    height: auto;
+    margin: 80px auto 0 auto;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.ui__byttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game__ui, .game__ui-btn {
+    font-size: 20px;
+}
+
+#game-restart {
+    display: none;
+}

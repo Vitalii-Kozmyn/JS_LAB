@@ -5,36 +5,104 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/main.css" />
         <link rel="stylesheet" href="./css/buttons-style.css" />
+        <link rel="stylesheet" href="./css/card.css" />
+        <link rel="stylesheet" href="./css/movie-page.css" />
+        <link rel="stylesheet" href="./css/modal.css" />
         <title>Film Libary</title>
     </head>
     <body>
-        <header>
+        <header class="header">
             <div class="container">
-                <nav>
-                    <div class="nav__logo">
-                        <img src="./images/logo.png" alt="Лого" class="nav__logo-image" />
+                <div class="header__conatiner">
+                    <div class="desktop-nav">
+                        <nav>
+                            <div class="nav__logo">
+                                <img
+                                    src="./images/logo_fl.png"
+                                    alt="Лого"
+                                    class="nav__logo-image"
+                                />
+                            </div>
+                            <ul class="nav__menu">
+                                <li class="nav__menu-item">
+                                    <a href="#" class="nav__menu-link go-to-home">Головна</a>
+                                </li>
+                                <li class="nav__menu-item">
+                                    <a href="#catalog" class="nav__menu-link go-to-home">Каталог</a>
+                                </li>
+                                <li class="nav__menu-item">
+                                    <a href="movie-catcher.html" class="nav__menu-link">Гра</a>
+                                </li>
+                            </ul>
+                            <div class="nav__user-option">
+                                <a href="#" class="nav__button nav__button--login">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Увійти
+                                </a>
+                                <div class="user-info">
+                                    <span
+                                        id="username-display"
+                                        class="username-display hidden"
+                                    ></span>
+                                    <a href="#" class="nav__button--logout hidden" id="logoutBtn">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        Вийти
+                                    </a>
+                                </div>
+                            </div>
+                        </nav>
                     </div>
-                    <ul class="nav__menu">
-                        <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link">Головна</a>
-                        </li>
-                        <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link">Каталог</a>
-                        </li>
-                        <li class="nav__menu-item">
-                            <a href="#" class="nav__menu-link">Гра</a>
-                        </li>
-                    </ul>
-                    <div class="nav__user-option">
-                        <a href="#" class="btn nav__button nav__button--login">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Увійти
-                        </a>
+                    <!--Навігація для мобіли-->
+                    <div class="mobile-nav" id="mobileMenu">
+                        <div class="mobile-nav--ui">
+                            <div class="nav__logo--mobile">
+                                <img
+                                    src="./images/logo_fl-mobile.png"
+                                    alt="Лого"
+                                    class="nav__logo-image"
+                                />
+                            </div>
+                            <button class="burger" id="burger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                        <nav>
+                            <div class="mobile-nav--top">
+                                <div class="nav__logo--mobile">
+                                    <img
+                                        src="./images/logo_fl-mobile.png"
+                                        alt="Лого"
+                                        class="nav__logo-image"
+                                    />
+                                </div>
+                                <button class="close-btn" id="closeMenu">&times;</button>
+                            </div>
+                            <ul class="nav__menu">
+                                <li class="nav__menu-item">
+                                    <a href="#" class="nav__menu-link">Головна</a>
+                                </li>
+                                <li class="nav__menu-item">
+                                    <a href="#catalog" class="nav__menu-link">Каталог</a>
+                                </li>
+                                <li class="nav__menu-item">
+                                    <a href="#" class="nav__menu-link">Гра</a>
+                                </li>
+                            </ul>
+                            <div class="nav__user-option">
+                                <button class="btn hero__button btn-mobile--login">Увійти</button>
+                                <button id="logoutBtn" class="btn nav__button hidden">Вийти</button>
+                            </div>
+                        </nav>
                     </div>
-                </nav>
+                </div>
             </div>
         </header>
         <main>
@@ -47,6 +115,126 @@
                     </div>
                 </div>
             </section>
+            <section class="advantages-section">
+                <div class="container">
+                    <div class="advantages__container">
+                        <p>Зручний інтерфейс</p>
+                        <p>Швидкий пошук фільмів</p>
+                        <p>Регулярні оновлення</p>
+                    </div>
+                </div>
+            </section>
+            <section class="catalog-section" id="catalog">
+                <div class="container">
+                    <div class="catalog__container">
+                        <h2 class="section-title">Каталог фільмів</h2>
+                        <div class="catalog__filter">
+                            <ul class="filter__option-list">
+                                <li class="option-list__item">
+                                    <button class="filter-btn active" id="btn-all">Всі</button>
+                                </li>
+                                <li class="option-list__item">
+                                    <button class="filter-btn" id="btn-action">Екшн</button>
+                                </li>
+                                <li class="option-list__item">
+                                    <button class="filter-btn" id="btn-comedy">Комедія</button>
+                                </li>
+                                <li class="option-list__item">
+                                    <button class="filter-btn" id="btn-fantasy">Фентезі</button>
+                                </li>
+                                <li class="option-list__item">
+                                    <button class="filter-btn" id="btn-horror">Жахи</button>
+                                </li>
+                                <li class="option-list__item">
+                                    <button class="filter-btn" id="btn-romance">Романтика</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="catalog__films"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="movie-section">
+                <div class="container">
+                    <div class="movie__page"></div>
+                </div>
+            </section>
+            <div class="modal-window hidden">
+                <div class="modal__content">
+                    <span class="close-btn--modal" id="closeModal">&times;</span>
+                    <div class="modal__login hidden">
+                        <h2>Авторизація</h2>
+                        <form id="loginForm">
+                            <input type="text" placeholder="Логін" id="login-username" required />
+                            <input
+                                type="password"
+                                placeholder="Пароль"
+                                id="login-password"
+                                required
+                            />
+                            <button class="btn-authentication" type="submit">Увійти</button>
+                        </form>
+                        <p>Немає аккаунту? <a href="#" id="showRegister">Зареєструватись</a></p>
+                    </div>
+                    <div id="modal--register" class="modal__register hidden">
+                        <h2>Реєстрація</h2>
+                        <form id="registerForm">
+                            <input
+                                type="text"
+                                placeholder="Логін"
+                                id="register-username"
+                                required
+                            />
+                            <input type="email" placeholder="Email" id="register-email" required />
+                            <input
+                                type="password"
+                                placeholder="Пароль"
+                                id="register-password"
+                                required
+                            />
+                            <button class="btn-authentication" type="submit">
+                                Зареєструватися
+                            </button>
+                        </form>
+                        <p>Вже маєш аккаунт? <a href="#" id="showLogin">Увійти</a></p>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer__container">
+                        <div class="footer__section footer__section--logo">
+                            <img
+                                src="./images/logo_fl-mobile.png"
+                                alt="Лого"
+                                class="nav__logo-image"
+                            />
+                        </div>
+                        <div class="footer__section footer__section--devs">
+                            <h3 class="footer__title">Розробники</h3>
+                            <p class="footer__text">Козьмин В.В.</p>
+                            <p class="footer__text">Гнатишин С.М.</p>
+                        </div>
+                        <div class="footer__section footer__section--nav">
+                            <h3 class="footer__title">Навігація</h3>
+                            <div class="footer__nav-ui">
+                                <a href="#" class="footer__nav-link go-to-home">Головна</a>
+                                <a href="#" class="footer__nav-link">Гра</a>
+                            </div>
+                        </div>
+                        <div class="footer__section footer__section--supp">
+                            <h3 class="footer__title">Підтримка</h3>
+                            <a href="#" class="footer__nav-link">Зв'язатися з нами</a>
+                            <p class="footer__copyright">&copy; 2025 Усі права захищені</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </main>
+        <script src="./js/NewFilmScript.js"></script>
+        <script src="./js/BurgerScript.js"></script>
+        <script src="./js/CatalogScript.js"></script>
+        <script src="./js/MoviePageScript.js"></script>
+        <script src="./js/authentication.js"></script>
     </body>
 </html>

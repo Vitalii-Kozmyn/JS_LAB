@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/buttons-style.css" />
+        <link rel="stylesheet" href="./css/game-style.css" />
+        <title>Movie Catcher</title>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section class="game-section">
+                <div class="container">
+                    <div class="game__container">
+                        <div class="game__wrapper hidden">
+                            <video class="bg-video game__bg-video" autoplay loop muted plays-inline>
+                                <source src="video/drstrange2.mp4" type="video/mp4" />
+                            </video>
+                            <div class="game__pole">
+                                <div class="popcorns"></div>
+                                <div class="game__danger-line"></div>
+                                <div class="game__basket"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game__ui">
+                        <p>Попкорнометр: <span id="popcorn-score">0</span></p>
+                        <div class="ui__byttons">
+                            <button class="game__ui-btn btn" id="game-start">Старт</button>
+                            <button class="game__ui-btn btn" id="game-restart">Перезапуск</button>
+                            <button class="game__ui-btn btn" id="game-go-home">Головна</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="./js/catcher.js"></script>
+    </body>
+</html>

@@ -121,8 +121,9 @@ function StartGame() {
     basketLeft = parseInt(window.getComputedStyle(basket).getPropertyValue('left'));
     basketBottom = parseInt(window.getComputedStyle(basket).getPropertyValue('bottom'));
 
-    generatePopcorn();
+    setTimeout(generatePopcorn, 3000);
 }
+
 
 function GameOver() {
     gameWapper.classList.add("hidden");

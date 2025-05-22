@@ -14,6 +14,7 @@ const formRegister = document.getElementById("registerForm");
 const logoutBtn = document.getElementById("logoutBtn");
 const loginBtnDesktop = document.querySelector(".nav__button--login");
 const usernameDisplay = document.getElementById("username-display");
+const logoutBtnMobile = document.getElementById("logoutBtnMobile");
 
 function lockScroll() {
     document.body.style.overflow = 'hidden';
@@ -77,7 +78,9 @@ function updateUIForLoggedInUser() {
 
     if (user) {
         loginBtnDesktop.classList.add("hidden");
+        btnOpenLoginForm__mobile.classList.add("hidden");
         logoutBtn.classList.remove("hidden");
+        logoutBtnMobile.classList.remove("hidden");
         
         usernameDisplay.textContent = user;
         usernameDisplay.classList.remove("hidden");
@@ -86,12 +89,15 @@ function updateUIForLoggedInUser() {
         }
     } else {
         loginBtnDesktop.classList.remove("hidden");
+        btnOpenLoginForm__mobile.classList.remove("hidden");
         logoutBtn.classList.add("hidden");
+        logoutBtnMobile.classList.add("hidden");
         
         usernameDisplay.classList.add("hidden");
         usernameDisplay.style.color = "rgb(240, 248, 255)";
     }
 }
+
 
 formLogin.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -128,6 +134,12 @@ formRegister.addEventListener("submit", function (e) {
 });
 
 logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedInUser");
+    updateUIForLoggedInUser();
+    alert("Ви вийшли з акаунту.");
+});
+
+logoutBtnMobile.addEventListener("click", () => {
     localStorage.removeItem("loggedInUser");
     updateUIForLoggedInUser();
     alert("Ви вийшли з акаунту.");

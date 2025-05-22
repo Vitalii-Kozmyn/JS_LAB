@@ -8,6 +8,12 @@
         <link rel="stylesheet" href="./css/card.css" />
         <link rel="stylesheet" href="./css/movie-page.css" />
         <link rel="stylesheet" href="./css/modal.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+            rel="stylesheet"
+        />
         <title>Film Libary</title>
     </head>
     <body>
@@ -87,13 +93,19 @@
                             </div>
                             <ul class="nav__menu">
                                 <li class="nav__menu-item">
-                                    <a href="#" class="nav__menu-link">Головна</a>
+                                    <a href="#" class="nav__menu-link mobile-nav__home go-to-home"
+                                        >Головна</a
+                                    >
                                 </li>
                                 <li class="nav__menu-item">
-                                    <a href="#catalog" class="nav__menu-link">Каталог</a>
+                                    <a
+                                        href="#catalog"
+                                        class="nav__menu-link mobile-nav__catalog go-to-home"
+                                        >Каталог</a
+                                    >
                                 </li>
                                 <li class="nav__menu-item">
-                                    <a href="#" class="nav__menu-link">Гра</a>
+                                    <a href="movie-catcher.html" class="nav__menu-link">Гра</a>
                                 </li>
                             </ul>
                             <div class="nav__user-option">
@@ -111,7 +123,7 @@
                     <div class="hero__container">
                         <h1 class="hero__title">Новинки</h1>
                         <div class="hero__movie"></div>
-                        <button class="btn hero__button">Дивитися</button>
+                        <a href="#catalog"><button class="btn hero__button">Дивитися</button></a>
                     </div>
                 </div>
             </section>

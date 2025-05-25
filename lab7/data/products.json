@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "category": "Старші Аркани",
+        "categoryIndex": 1,
+        "name": "Дурень",
+        "shortname": "fool",
+        "description": "Символ нових починань, наївності та спонтанності.",
+        "price": "100₴",
+        "image": "https://place-hold.it/200x200?text=Fool"
+    },
+    {
+        "id": 2,
+        "category": "Старші Аркани",
+        "categoryIndex": 1,
+        "name": "Маг",
+        "shortname": "magician",
+        "description": "Уособлює силу волі, ініціативу та прояв потенціалу.",
+        "price": "120₴",
+        "image": "https://place-hold.it/200x200?text=Magician"
+    },
+    {
+        "id": 3,
+        "category": "Старші Аркани",
+        "categoryIndex": 1,
+        "name": "Верховна Жриця",
+        "shortname": "priestess",
+        "description": "Таємниці, інтуїція та внутрішня мудрість.",
+        "price": "110₴",
+        "image": "https://place-hold.it/200x200?text=Priestess"
+    },
+    {
+        "id": 4,
+        "category": "Старші Аркани",
+        "categoryIndex": 1,
+        "name": "Імператриця",
+        "shortname": "empress",
+        "description": "Плідність, материнство та творча енергія.",
+        "price": "130₴",
+        "image": "https://place-hold.it/200x200?text=Empress"
+    },
+    {
+        "id": 5,
+        "category": "Жезли",
+        "categoryIndex": 2,
+        "name": "Туз Жезлів",
+        "shortname": "ace_wands",
+        "description": "Нова енергія, натхнення та можливості.",
+        "price": "90₴",
+        "image": "https://place-hold.it/200x200?text=Ace+Wands"
+    },
+    {
+        "id": 6,
+        "category": "Жезли",
+        "categoryIndex": 2,
+        "name": "Двійка Жезлів",
+        "shortname": "two_wands",
+        "description": "Планування, очікування результатів.",
+        "price": "85₴",
+        "image": "https://place-hold.it/200x200?text=Two+Wands"
+    },
+    {
+        "id": 7,
+        "category": "Жезли",
+        "categoryIndex": 2,
+        "name": "Трійка Жезлів",
+        "shortname": "three_wands",
+        "description": "Розвиток і втілення задумів.",
+        "price": "95₴",
+        "image": "https://place-hold.it/200x200?text=Three+Wands"
+    },
+    {
+        "id": 8,
+        "category": "Жезли",
+        "categoryIndex": 2,
+        "name": "Четвірка Жезлів",
+        "shortname": "four_wands",
+        "description": "Свято, гармонія та стабільність.",
+        "price": "100₴",
+        "image": "https://place-hold.it/200x200?text=Four+Wands"
+    },
+    {
+        "id": 9,
+        "category": "Келихи",
+        "categoryIndex": 3,
+        "name": "Туз Келихів",
+        "shortname": "ace_cups",
+        "description": "Початок нових емоційних зв’язків.",
+        "price": "95₴",
+        "image": "https://place-hold.it/200x200?text=Ace+Cups"
+    },
+    {
+        "id": 10,
+        "category": "Келихи",
+        "categoryIndex": 3,
+        "name": "Двійка Келихів",
+        "shortname": "two_cups",
+        "description": "Партнерство, любов та гармонія.",
+        "price": "110₴",
+        "image": "https://place-hold.it/200x200?text=Two+Cups"
+    },
+    {
+        "id": 11,
+        "category": "Келихи",
+        "categoryIndex": 3,
+        "name": "Трійка Келихів",
+        "shortname": "three_cups",
+        "description": "Святкування, спільнота, дружба.",
+        "price": "105₴",
+        "image": "https://place-hold.it/200x200?text=Three+Cups"
+    },
+    {
+        "id": 12,
+        "category": "Келихи",
+        "categoryIndex": 3,
+        "name": "Четвірка Келихів",
+        "shortname": "four_cups",
+        "description": "Апатія, незадоволення, нові можливості поруч.",
+        "price": "102₴",
+        "image": "https://place-hold.it/200x200?text=Four+Cups"
+    }
+]

@@ -11,19 +11,96 @@
             <div class="large__nav">
                 <nav class="navigation">
                     <ul class="nav__menu">
-                        <li class="nav__menu-item"><a href="#">Головна</a></li>
-                        <li class="nav__menu-item"><a href="#">Чайний збірник</a></li>
-                        <li class="nav__menu-item"><a href="#">Поради</a></li>
+                        <li class="nav__menu-item"><a href="#hero">Головна</a></li>
+                        <li class="nav__menu-item"><a href="#slider-sec">Чайний збірник</a></li>
+                        <li class="nav__menu-item"><a href="#chai-info--1">Інформація</a></li>
                     </ul>
                 </nav>
             </div>
+            <header>
+                <div class="medium__nav">
+                    <button class="burger" id="burger">&#9776;</button>
+                    <nav class="navigation" id="mobileNav">
+                        <ul class="nav__menu">
+                            <li class="nav__menu-item"><a href="#hero">Головна</a></li>
+                            <li class="nav__menu-item"><a href="#slider-sec">Чайний збірник</a></li>
+                            <li class="nav__menu-item"><a href="#chai-info--2">Інформація</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
         </header>
         <main>
-            <section class="hero-section">
+            <section class="hero-section" id="hero">
                 <div class="container">
                     <h1 class="section-title"><span>Чайний</span> довідник</h1>
                 </div>
             </section>
+            <section class="slide-section" id="slider-sec">
+                <div class="container">
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide"><img src="./images/slide_11.png" alt="" /></div>
+                            <div class="slide"><img src="./images/slide_2.png" alt="" /></div>
+                            <div class="slide"><img src="./images/slide_3.png" alt="" /></div>
+                            <div class="slide"><img src="./images/slide_4.png" alt="" /></div>
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button class="prev">←</button>
+                        <div class="dots"></div>
+                        <button class="next">→</button>
+                    </div>
+                </div>
+            </section>
+            <section class="chai-section--1" id="chai-info--1">
+                <div class="container">
+                    <div class="cai__info--1">
+                        <img class="chai__img" src="./images/img_1_1.jpg" alt="" />
+                        <p>
+                            <span>Чорний чай</span> містить більше кофеїну, ніж інші види чаю, тому
+                            допомагає підвищити
+                            <br />
+                            концентрацію та бадьорість. Має потужні антиоксиданти, які підтримують
+                            <br />
+                            серцево-судинну систему. Може допомогти знизити рівень "поганого" <br />
+                            холестерину при регулярному вживанні.
+                        </p>
+                    </div>
+                    <div class="cai__info--2">
+                        <p>
+                            <span>Фруктовий чай</span> поєднує користь зеленого чаю <br />
+                            з вітамінами з фруктових добавок, підтримуючи імунітет.<br />
+                            Чай містить катехіни, які сприяють прискоренню метаболізму.<br />
+                            Фруктові аромати роблять напій смачнішим і можуть знижувати апетит.
+                        </p>
+                        <img class="chai__img" src="./images/img_1_2.jpg" alt="" />
+                    </div>
+                </div>
+            </section>
+            <section class="chai-section--2" id="chai-info--2">
+                <div class="container">
+                    <div class="cai__info--1">
+                        <img class="chai__img" src="./images/img_2_1.jpg" alt="" />
+                        <p>
+                            <span>Зелений чай</span> поєднує користь зеленого чаю <br />
+                            з вітамінами з фруктових добавок, підтримуючи імунітет. Чай містить
+                            катехіни, <br />які сприяють прискоренню метаболізму. Фруктові аромати
+                            роблять напій смачнішим і можуть знижувати апетит.
+                        </p>
+                    </div>
+                    <div class="cai__info--2">
+                        <img class="chai__img" src="./images/img_2_2.jpg" alt="" />
+                        <p>
+                            <span>М'ятний чай</span> Має заспокійливу дію, знижує стрес<br />
+                            і сприяє кращому сну. Сприяє покращенню травлення <br />
+                            та зменшенню здуття живота. Не містить кофеїну, тому підходить для
+                            вживання ввечері або перед сном.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </main>
+        <script src="./js/script.js"></script>
     </body>
 </html>

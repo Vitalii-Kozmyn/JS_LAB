@@ -1,15 +1,15 @@
 :root {
-    --main-color: #4E342E;
-    --minor-color: #A5B69B;
+    --main-color: #4e342e;
+    --minor-color: #a5b69b;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     height: 100%;
 }
-
 
 body {
     background-color: var(--main-color);
@@ -26,7 +26,6 @@ li {
     list-style: none;
 }
 
-
 .container {
     padding: 0 120px;
 }
@@ -42,19 +41,56 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
     padding: 20px 0;
     z-index: 999;
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px);
     margin-top: 0;
 }
 
+.burger {
+    display: none;
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: var(--minor-color);
+    cursor: pointer;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .nav__menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        gap: 60px;
+    }
+
+    .nav__menu.open {
+        transform: translateY(0);
+    }
+}
+
 .hero-section {
-    background-image: url("../images/hero-bg.png");
+    background-image: url('../images/hero-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +103,7 @@ header {
 }
 
 .hero-section::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -91,3 +127,167 @@ header {
 .section-title span {
     color: var(--minor-color);
 }
+
+.slide-section {
+    margin-top: 36px;
+}
+
+/* Контейнер слайдера */
+.slider {
+    width: 90%;
+    max-width: 90%;
+    aspect-ratio: 3 / 2; /* або 1546 / 1026 ≈ 3 / 2 */
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+/* Контейнер зі слайдами */
+.slides {
+    display: flex;
+    height: 90%;
+    transition: transform 0.5s ease-in-out;
+    border-radius: 20px;
+}
+
+/* Один слайд */
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Зображення */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Кнопки та індикатори */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prev,
+.next {
+    background: var(--minor-color);
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 26px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: aliceblue;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: var(--minor-color);
+}
+
+.chai-section--1 {
+    display: block;
+    margin-top: 68px;
+}
+
+.chai-section--2 {
+    display: none;
+}
+
+.cai__info--1,
+.cai__info--2 {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    width: 100%;
+    height: 300px;
+    font-size: 22px;
+    color: aliceblue;
+}
+
+.cai__info--1 span,
+.cai__info--2 span {
+    color: var(--minor-color);
+}
+
+.cai__info--2 {
+    justify-content: flex-end;
+}
+
+.cai__info--2 p {
+    text-align: right;
+}
+
+.cai__info--1 img,
+.cai__info--2 img {
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .chai-section--1 {
+        display: none;
+    }
+
+    .chai-section--2 {
+    display: block;
+    margin-top: 108px;
+    margin-bottom: 22px;
+}
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .cai__info--1,
+    .cai__info--2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        width: 90%;
+        font-size: 18px;
+        color: aliceblue;
+        border: 2px solid #ffffff55;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.05);
+        height: auto;
+    }
+
+    .cai__info--1 p,
+    .cai__info--2 p {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .chai__img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
+
+

@@ -4,7 +4,6 @@ const dotsContainer = document.querySelector('.dots');
 let currentIndex = 0;
 let timer;
 
-// Індикатори
 for (let i = 0; i < slideCount; i++) {
   const dot = document.createElement('div');
   dot.classList.add('dot');
@@ -38,7 +37,6 @@ function updateSlider() {
   });
 }
 
-// Автоматичне перемикання
 function startAutoSlide() {
   timer = setInterval(() => {
     currentIndex = (currentIndex + 1) % slideCount;
@@ -51,7 +49,7 @@ function resetTimer() {
   startAutoSlide();
 }
 
-window.addEventListener('resize', updateSlider); // адаптація при зміні розміру вікна
+window.addEventListener('resize', updateSlider);
 
 startAutoSlide();
 updateSlider();
